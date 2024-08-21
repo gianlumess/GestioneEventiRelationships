@@ -1,4 +1,4 @@
-package gianlucamessina.entities;
+package gianlucamessina.enums;
 
 public enum TipoEvento {
     PUBBLICO, PRIVATO

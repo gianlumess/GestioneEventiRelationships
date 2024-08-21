@@ -1,5 +1,6 @@
 package gianlucamessina.entities;
 
+import gianlucamessina.enums.PersonaSesso;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

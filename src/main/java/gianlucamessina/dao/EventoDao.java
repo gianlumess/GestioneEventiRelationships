@@ -5,6 +5,8 @@ import gianlucamessina.exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
+import java.util.UUID;
+
 public class EventoDao {
     private final EntityManager em;
 
@@ -30,13 +32,13 @@ public class EventoDao {
         System.out.println("L'evento " + evento.getTitolo() + " è stato salvato con successo!");
     }
 
-    public Evento getById(long eventoId) {
+    public Evento getById(UUID eventoId) {
         Evento found = em.find(Evento.class, eventoId);
         if (found == null) throw new NotFoundException(eventoId);
         return found;
     }
 
-    public void deleteById(long eventoId) {
+    public void deleteById(UUID eventoId) {
         Evento found = this.getById(eventoId);
 
         EntityTransaction transaction = em.getTransaction();

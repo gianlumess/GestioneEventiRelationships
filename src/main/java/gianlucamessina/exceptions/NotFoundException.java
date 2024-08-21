@@ -1,7 +1,9 @@
 package gianlucamessina.exceptions;
 
+import java.util.UUID;
+
 public class NotFoundException extends RuntimeException {
-    public NotFoundException(long id) {
+    public NotFoundException(UUID id) {
         super("Il record con ID: " + id + " non è stato trovato");
     }
 }

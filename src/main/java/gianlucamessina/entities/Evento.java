@@ -1,14 +1,16 @@
 package gianlucamessina.entities;
 
+import gianlucamessina.enums.TipoEvento;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity //facciamo in modo che la classe sia mappata ad una tabella nel DB
 public class Evento {
     @Id //serve a dichiarare che l'attributo sarà la chiave primaria
     @GeneratedValue //genera un valore il DB
-    private long id;
+    private UUID id;
     @Column(name = "titolo")
     private String titolo;
     @Column(name = "data_evento")
@@ -39,7 +41,7 @@ public class Evento {
 //GETTER E SETTER
 
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
