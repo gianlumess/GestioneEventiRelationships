@@ -25,14 +25,20 @@ public class Evento {
     @Column(name = "numero_massimo_partecipanti")
     private Integer numeroMassimoPartecipanti;
 
+    @ManyToOne
+    @JoinColumn(name = "location_id", nullable = false)
+    private Location locationId;
+
     //COSTRUTTORE
 
-    public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento, Integer numeroMassimoPartecipanti) {
+
+    public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento, Integer numeroMassimoPartecipanti, Location locationId) {
         this.titolo = titolo;
         this.dataEvento = dataEvento;
         this.descrizione = descrizione;
         this.tipoEvento = tipoEvento;
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+        this.locationId = locationId;
     }
 
     public Evento() {
@@ -40,6 +46,14 @@ public class Evento {
     }
 //GETTER E SETTER
 
+
+    public Location getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Location locationId) {
+        this.locationId = locationId;
+    }
 
     public UUID getId() {
         return id;
@@ -94,6 +108,7 @@ public class Evento {
                 ", descrizione='" + descrizione + '\'' +
                 ", tipoEvento=" + tipoEvento +
                 ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti +
+                ", locationId=" + locationId +
                 '}';
     }
 }

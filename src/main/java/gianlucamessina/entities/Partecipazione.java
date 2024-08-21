@@ -10,11 +10,11 @@ public class Partecipazione {
     @Id
     @GeneratedValue
     private UUID id;
-    @OneToOne
-    @JoinColumn(name = "persona", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "persona_id", nullable = false)
     private Persona persona;
-    @OneToOne
-    @JoinColumn(name = "evento", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "evento_id", nullable = false)
     private Evento evento;
 
     public Partecipazione() {
